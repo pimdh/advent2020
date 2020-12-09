@@ -55,6 +55,7 @@ fn read_rom(path: &str) -> ROM {
     io::BufReader::new(file).lines().map(|l| read_line(&l.unwrap())).collect()
 }
 
+#[allow(clippy::ptr_arg)]
 fn step(rom: &ROM, mut state: ProgramState) -> ProgramState {
     match rom[state.pc as usize] {
         Instruction::Nop(_) => { state.pc += 1 }
@@ -65,6 +66,7 @@ fn step(rom: &ROM, mut state: ProgramState) -> ProgramState {
 }
 
 
+#[allow(clippy::ptr_arg)]
 fn run_until_loop_or_terminatation(rom: &ROM) -> (bool, ProgramState) {
     let mut state = ProgramState::init();
     let mut visited = BTreeSet::new();
@@ -89,6 +91,7 @@ pub fn problem8a(demo: bool) {
     println!("{} {}", terminated, state.acc);
 }
 
+#[allow(clippy::ptr_arg)]
 fn modify_rom(rom: &ROM, i: usize) -> Option<ROM> {
     let mut mod_rom = rom.clone();
     match mod_rom[i] {
