@@ -17,6 +17,12 @@ mod day13;
 mod day14;
 mod day15;
 mod day16;
+mod day17;
+mod day18;
+mod day19;
+mod day20;
+mod day21;
+mod day22;
 
 fn main() {
     let arg = std::env::args().nth(1).expect("no pattern given");
@@ -54,6 +60,18 @@ fn main() {
         "15b" => day15::problem15b(is_demo),
         "16a" => day16::problem16a(is_demo),
         "16b" => day16::problem16b(is_demo),
+        "17a" => day17::problem17a(is_demo),
+        "17b" => day17::problem17b(is_demo),
+        "18a" => day18::problem18a(is_demo),
+        "18b" => day18::problem18b(is_demo),
+        "19a" => day19::problem19a(is_demo),
+        "19b" => day19::problem19b(is_demo),
+        "20a" => day20::problem20a(is_demo),
+        "20b" => day20::problem20b(is_demo),
+        "21a" => day21::problem21a(is_demo),
+        "21b" => day21::problem21b(is_demo),
+        "22a" => day22::problem22a(is_demo),
+        "22b" => day22::problem22b(is_demo),
         &_ => println!("Problem not found")
     }
 }
